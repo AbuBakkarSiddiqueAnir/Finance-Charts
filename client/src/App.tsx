@@ -3,6 +3,7 @@ import { useMemo } from "react"
 import { themeSettings } from "./theme"
 import { BrowserRouter } from "react-router-dom"
 import {Routes, Route} from 'react-router-dom'
+import { Navbar } from "./scenes"
 
 function App() {
   const theme = useMemo(()=>createTheme(themeSettings),[])
