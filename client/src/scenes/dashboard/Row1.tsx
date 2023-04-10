@@ -10,6 +10,8 @@ type Row1Props = {
 
 const Row1 = (props: Row1Props) => {
     const {data} = useGetKpisQuery()
+    console.log(data)
+
 
     return <>
         <DashboardBox gridArea='a'></DashboardBox>
