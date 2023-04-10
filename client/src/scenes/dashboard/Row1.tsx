@@ -18,6 +18,7 @@ import {
     Tooltip,
     Area,
 } from "recharts";
+import BoxHeader from '@/components/BoxHeader';
 
 type Row1Props = {
 
@@ -42,28 +43,52 @@ const Row1 = (props: Row1Props) => {
 
     return <>
         <DashboardBox gridArea='a'>
+            <BoxHeader
+                title='Revenue and Expenses'
+                subtitle='nothing fency'
+                sideText='+3%'
+            />
             <ResponsiveContainer width="100%" height="100%">
                 <AreaChart
                     width={500}
                     height={300}
                     data={revenueExpenses}
                     margin={{
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
+                        top: 15,
+                        right: 25,
+                        left: -10,
+                        bottom: 60,
                     }}
                 >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
+                    {/* <CartesianGrid strokeDasharray="3 3" /> */}
+                    <defs>
+                        <linearGradient id='colorRevenue' x1='0' y1='0' x2='0' y2='1'>
+                            <stop offset='5%' stopColor={palette.primary[300]} stopOpacity={0.5} />
+                            <stop offset='95%' stopColor={palette.primary[300]} stopOpacity={0} />
+                        </linearGradient>
+                        <linearGradient id='colorExpenses' x1='0' y1='0' x2='0' y2='1'>
+                            <stop offset='5%' stopColor={palette.primary[300]} stopOpacity={0.5} />
+                            <stop offset='95%' stopColor={palette.primary[300]} stopOpacity={0} />
+                        </linearGradient>
+                    </defs>
+                    <XAxis dataKey="name" tickLine={false} style={{ fontSize: '10px' }} />
+                    <YAxis tickLine={false} style={{ fontSize: '10px' }} axisLine={{ strokeWidth: '0' }} domain={[8000, 23000]} />
                     <Tooltip />
                     <Area
                         type='monotone'
                         dataKey={'revenue'}
                         stroke={palette.primary.main}
                         fillOpacity={1}
-                        fill='url(#colorRevenue'
+                        dot
+                        fill='url(#colorRevenue)'
+                    />
+                    <Area
+                        type='monotone'
+                        dataKey={'expenses'}
+                        stroke={palette.primary.main}
+                        fillOpacity={1}
+                        dot
+                        fill='url(#colorExpenses)'
                     />
                 </AreaChart>
             </ResponsiveContainer>
