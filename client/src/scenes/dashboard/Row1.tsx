@@ -29,6 +29,7 @@ const Row1 = (props: Row1Props) => {
         return (
             data &&
             data[0].monthlyData.map(({ month, revenue, expenses }) => {
+
                 return {
                     name: month.substring(0, 3),
                     revenue,

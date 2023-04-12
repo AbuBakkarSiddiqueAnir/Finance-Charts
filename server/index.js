@@ -10,7 +10,7 @@ import productRoutes from './routes/product.js'
 import KPI from "./models/KPI.js";
 import Product from "./models/Product.js";
 
-import {kpis} from './data/data.js'
+import {kpis,products} from './data/data.js'
 
 
 
@@ -44,4 +44,5 @@ mongoose
     app.listen(PORT, () => console.log(`server port: ${PORT}`));
     //await mongoose.connection.db.dropDatabase();
     // KPI.insertMany(kpis)
+    // Product.insertMany(products)
   });
