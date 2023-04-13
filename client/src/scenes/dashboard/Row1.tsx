@@ -18,9 +18,7 @@ import {
 } from "recharts";
 import BoxHeader from '@/components/BoxHeader';
 
-type Row1Props = {
-
-};
+type Row1Props = {};
 
 const Row1 = (props: Row1Props) => {
     const { data } = useGetKpisQuery()

@@ -8,9 +8,8 @@ import { CartesianGrid,ScatterChart, LineChart, ResponsiveContainer, XAxis, YAxi
 import { useTheme } from '@mui/material/styles';
 import FlexBetween from '@/components/FlexBetween';
 import { Typography, Box } from '@mui/material';
-type Row2Props = {
 
-};
+type Row2Props = {};
 
 const pieData = [
   { name: "Group A", value: 600 },
