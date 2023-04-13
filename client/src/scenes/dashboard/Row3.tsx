@@ -1,6 +1,7 @@
 
 
 import DashboardBox from '@/components/DashboardBox';
+import { useGetTransactionsQuery } from '@/state/api';
 import React from 'react';
 
 type Row3Props = {
@@ -8,6 +9,9 @@ type Row3Props = {
 };
 
 const Row3 = (props: Row3Props) => {
+
+    const {data} = useGetTransactionsQuery();
+    console.log(data)
 
     return <>
         <DashboardBox gridArea='g'></DashboardBox>

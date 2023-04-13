@@ -26,7 +26,6 @@ const Row2 = (props: Row2Props) => {
   const { data: operationalData } = useGetKpisQuery()
 
   const operationalExpenses = React.useMemo(() => {
-    console.log(operationalData)
     return (
       operationalData &&
       operationalData[0].monthlyData.map(
