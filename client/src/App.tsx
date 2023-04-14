@@ -8,9 +8,6 @@ import { Navbar, Dashboard } from "@/scenes"
 
 function App() {
   const theme = useMemo(()=>createTheme(themeSettings),[])
-  const them2e = createTheme(themeSettings)
-
-  console.log(theme,them2e)
 
   return (
     <div className="app">
@@ -22,13 +19,10 @@ function App() {
          <Routes>
           <Route path='/' element={<Dashboard/>}/>
           <Route path='/predictions' element={<div>Predictions</div>}/>
-
          </Routes>
         </Box>
-
       </ThemeProvider>
       </BrowserRouter>
-
     </div>
   )
 }
